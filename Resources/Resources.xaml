@@ -1,0 +1,389 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="MenuButton" TargetType="RadioButton">
+
+        <Grid>
+
+            <Border x:Name="border_MenuButton"
+                    BorderBrush="#1DE08C"
+                    BorderThickness="1"
+                    CornerRadius="10"
+                    RenderTransformOrigin="0.5, 0.5"
+                    Background="Transparent">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+
+                    <Image Source="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}}"
+                           Width="20" Height="20" VerticalAlignment="Center"
+                           Margin="5, 3, 10, 3">
+
+                        <Image.RenderTransformOrigin>
+                            <Point X="0.5" Y="0.5"/>
+                        </Image.RenderTransformOrigin>
+                        <Image.RenderTransform>
+                            <RotateTransform x:Name="ImageRotation"/>
+                        </Image.RenderTransform>
+
+                    </Image>
+
+                    <TextBlock Text="{TemplateBinding Content}"
+                               FontSize="15"
+                               FontWeight="DemiBold"
+                               Foreground="#1DE08C"
+                               VerticalAlignment="Center"
+                               Margin="0, 0, 5, 0"/>
+
+                </StackPanel>
+
+                <Border.RenderTransform>
+                    <ScaleTransform x:Name="MenuButtonTransform"/>
+                </Border.RenderTransform>
+            </Border>
+
+        </Grid>
+
+        <ControlTemplate.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="true">
+
+                <Setter TargetName="border_MenuButton"
+                        Property="BorderThickness"
+                        Value="1"/>
+
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+
+                <Setter TargetName="border_MenuButton"
+                        Property="BorderThickness"
+                        Value="3"/>
+
+            </Trigger>
+
+            <EventTrigger RoutedEvent="Border.MouseEnter"
+                          SourceName="border_MenuButton">
+
+                <BeginStoryboard>
+                    <Storyboard>
+
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         From="1" To="1.1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                         Storyboard.TargetProperty="ScaleY"
+                                         From="1" To="1.1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetName="ImageRotation"
+                                         Storyboard.TargetProperty="Angle"
+                                         From="0" To="360" Duration="0:0:0.5"/>
+
+                    </Storyboard>
+                </BeginStoryboard>
+
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Border.MouseLeave"
+                          SourceName="border_MenuButton">
+
+                <BeginStoryboard>
+                    <Storyboard>
+
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         From="1.1" To="1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                         Storyboard.TargetProperty="ScaleY"
+                                         From="1.1" To="1" Duration="0:0:0.1"/>
+
+                    </Storyboard>
+                </BeginStoryboard>
+
+            </EventTrigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="MyButton" TargetType="Button">
+
+        <Grid>
+
+            <Border x:Name="border_MenuButton"
+                BorderBrush="#1DE08C"
+                BorderThickness="2"
+                CornerRadius="10"
+                RenderTransformOrigin="0.5, 0.5"
+                Background="Transparent">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+
+                    <Image Source="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}}"
+                           Width="20" Height="20" VerticalAlignment="Center"
+                           Margin="5, 3, 10, 3">
+
+                        <Image.RenderTransformOrigin>
+                            <Point X="0.5" Y="0.5"/>
+                        </Image.RenderTransformOrigin>
+                        <Image.RenderTransform>
+                            <RotateTransform x:Name="ImageRotation"/>
+                        </Image.RenderTransform>
+
+                    </Image>
+
+                    <TextBlock Text="{TemplateBinding Content}"
+                               FontSize="15"
+                               FontWeight="DemiBold"
+                               Foreground="#1DE08C"
+                               VerticalAlignment="Center"
+                               Margin="0, 0, 5, 0"/>
+
+                </StackPanel>
+
+                <Border.RenderTransform>
+                    <ScaleTransform x:Name="MenuButtonTransform"/>
+                </Border.RenderTransform>
+            </Border>
+
+        </Grid>
+
+        <ControlTemplate.Triggers>
+
+            <EventTrigger RoutedEvent="Border.MouseEnter"
+                      SourceName="border_MenuButton">
+
+                <BeginStoryboard>
+                    <Storyboard>
+
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         From="1" To="1.1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                         Storyboard.TargetProperty="ScaleY"
+                                         From="1" To="1.1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetName="ImageRotation"
+                                         Storyboard.TargetProperty="Angle"
+                                         From="0" To="360" Duration="0:0:0.5"/>
+
+                    </Storyboard>
+                </BeginStoryboard>
+
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Border.MouseLeave"
+                      SourceName="border_MenuButton">
+
+                <BeginStoryboard>
+                    <Storyboard>
+
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         From="1.1" To="1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                         Storyboard.TargetProperty="ScaleY"
+                                         From="1.1" To="1" Duration="0:0:0.1"/>
+
+                    </Storyboard>
+                </BeginStoryboard>
+
+            </EventTrigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Storyboard x:Key="FloatInAnimation">
+        <DoubleAnimation Storyboard.TargetName="mainPanel" 
+                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                         From="50" To="0" Duration="0:0:0.5" />
+    </Storyboard>
+    
+    <Storyboard x:Key="FadeInAnimation">
+        <DoubleAnimation Storyboard.TargetName="mainPanel" 
+                         Storyboard.TargetProperty="Opacity"
+                         From="0" To="1" Duration="0:0:0.5" />
+    </Storyboard>
+
+    <ControlTemplate x:Key="TextBoxTemplate" TargetType="TextBox">
+
+        <Grid>
+
+            <Border x:Name="border_TextBox"
+                    BorderBrush="#1DE08C"
+                    BorderThickness="1.5"
+                    CornerRadius="5">
+
+                <TextBox x:Name="TextBox"
+                         Background="Transparent"
+                         BorderBrush="Transparent"
+                         BorderThickness="0"
+                         Padding="5"
+                         TextWrapping="Wrap"
+                         Text="{Binding Text, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}"/>
+
+            </Border>
+
+        </Grid>
+
+        <ControlTemplate.Triggers>
+
+            <EventTrigger RoutedEvent="TextBox.GotFocus">
+                
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetName="border_TextBox"
+                                                Storyboard.TargetProperty="BorderThickness"
+                                                To="3" Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="TextBox.LostFocus">
+                
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetName="border_TextBox"
+                                                Storyboard.TargetProperty="BorderThickness"
+                                                To="1.5" Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                
+            </EventTrigger>
+            
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <Style x:Key="HoverBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="#1DE08C"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform x:Name="BorderTransform"/>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" From="1" To="1.03" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" From="1" To="1.03" Duration="0:0:0.1"/>
+                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#00C26E" Duration="0:0:01"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" From="1.03" To="1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" From="1.03" To="1" Duration="0:0:0.1"/>
+                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#1DE08C" Duration="0:0:01"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="RowBackground" Value="#BEECCF"/>
+        <Setter Property="AlternatingRowBackground" Value="#DCF9E6"/>
+        <Setter Property="AutoGenerateColumns" Value="True"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="SelectionUnit" Value="FullRow"/>
+        <Setter Property="VerticalGridLinesBrush" Value="Black"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="Black"/>
+        <Setter Property="CanUserResizeColumns" Value="False"/>
+        <Setter Property="CanUserResizeRows" Value="False"/>
+        <Setter Property="CanUserReorderColumns" Value="True"/>
+        <Setter Property="VerticalGridLinesBrush" Value="#1DE08C"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="#1DE08C"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+    <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
+        <Style.Resources>
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#1DE08C" />
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+        </Style.Resources>
+    </Style>
+    <Style x:Key="DataGridCellStyle" TargetType="DataGridCell">
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BorderBrush" Value="#1DE08C"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <ControlTemplate x:Key="ComboBoxTemplate" TargetType="ComboBox">
+
+        <Grid>
+
+            <Border x:Name="border_ComboBox"
+                    BorderBrush="#1DE08C"
+                    BorderThickness="1.5"
+                    CornerRadius="5">
+
+                <Grid>
+
+                    <ComboBox x:Name="ComboBox"
+                              Opacity="0"
+                              Height="25"
+                              ItemsSource="{Binding ItemsSource, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                              SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                    </ComboBox>
+
+                    <TextBlock x:Name="SelectedTextBlock"
+                                Text="{Binding SelectedValue, ElementName=ComboBox, Mode=OneWay}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                IsHitTestVisible="False"
+                                Margin="5,0,0,0"/>
+
+                    <Image Source="/Resources/Images/down.png" 
+                           HorizontalAlignment="Right" 
+                           VerticalAlignment="Center" 
+                           Height="20" Width="15" 
+                           IsHitTestVisible="False"
+                           Margin="0, 0, 10, 0"/>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+        <ControlTemplate.Triggers>
+
+            <EventTrigger RoutedEvent="ComboBox.GotFocus">
+
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ThicknessAnimation Storyboard.TargetName="border_ComboBox"
+                                        Storyboard.TargetProperty="BorderThickness"
+                                        To="3" Duration="0:0:0.1"/>
+                    </Storyboard>
+                </BeginStoryboard>
+
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="ComboBox.LostFocus">
+
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ThicknessAnimation Storyboard.TargetName="border_ComboBox"
+                                        Storyboard.TargetProperty="BorderThickness"
+                                        To="1.5" Duration="0:0:0.1"/>
+                    </Storyboard>
+                </BeginStoryboard>
+
+            </EventTrigger>
+
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+</ResourceDictionary>

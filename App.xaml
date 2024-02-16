@@ -1,0 +1,27 @@
+﻿<Application x:Class="NavegacionLateralWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:NavegacionLateralWPF"
+             xmlns:vm="clr-namespace:NavegacionLateralWPF.ViewModels"
+             xmlns:v="clr-namespace:NavegacionLateralWPF.Views"
+             StartupUri="Views/MainView.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type vm:MainViewModel}">
+                <v:MainView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                <v:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:EmpleadoViewModel}">
+                <v:EmpleadoView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:GraficaViewModel}">
+                <v:GraficaView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+                <v:SettingsView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
