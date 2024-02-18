@@ -7,14 +7,59 @@
              xmlns:p="clr-namespace:NavegacionLateralWPF.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             xmlns:vm="clr-namespace:NavegacionLateralWPF.ViewModels">
+             xmlns:vm="clr-namespace:NavegacionLateralWPF.ViewModels"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf">
                 <UserControl.DataContext>
                     <vm:GraficaViewModel/>
                 </UserControl.DataContext>
-    <Grid>
-        <TextBlock Text="Hola"/>
+    
+    <Grid x:Name="mainPanel" Loaded="GraficaView_Loaded">
 
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <TextBlock Text="{x:Static p:Resources.Graficas}"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Foreground="#147657"
+                   Margin="25, 10, 0, 0"
+                   Grid.Row="0"/>
+
+        <TextBlock Text="{x:Static p:Resources.EmpleadosPorDepartamento}"
+                   FontSize="15"
+                   Foreground="#147657"
+                   Margin="40, 10, 0, 0"
+                   Grid.Row="1"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" CornerRadius="10" BorderBrush="#1DE08C" BorderThickness="2" Margin="30, 10, 5, 30">
+
+                <lvc:PieChart Series="{Binding PieSeries}" LegendLocation="Bottom" DataTooltip="{x:Null}" Margin="10"/>
+
+            </Border>
+
+            <Border Grid.Column="1" CornerRadius="10" BorderBrush="#1DE08C" BorderThickness="2" Margin="5, 10, 30, 30">
+
+                <lvc:CartesianChart Series="{Binding BarSeries}" LegendLocation="Bottom" Margin="10">
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="{x:Static p:Resources.Departamentos}" Labels="{Binding Labels}"/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="{x:Static p:Resources.NEmpleados}"/>
+                    </lvc:CartesianChart.AxisY>
+                </lvc:CartesianChart>
+
+            </Border>
+
+        </Grid>
     </Grid>
+    
 </UserControl>

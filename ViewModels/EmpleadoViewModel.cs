@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NavegacionLateralWPF.Core;
+using System.Windows;
 
 namespace NavegacionLateralWPF.ViewModels
 {
@@ -128,6 +129,9 @@ namespace NavegacionLateralWPF.ViewModels
 
         public RelayCommand GuardarButtonCommand { get; set; }
         public RelayCommand EditarButtonCommand { get; set; }
+        public RelayCommand CancelarButtonCommand { get; set; }
+        public RelayCommand NuevoButtonCommand { get; set; }
+        public RelayCommand EliminarButtonCommand { get; set; }
 
         public EmpleadoViewModel()
         {
@@ -135,6 +139,9 @@ namespace NavegacionLateralWPF.ViewModels
             _departamentoRepository = App.Current.Services.GetService<DepartamentoRepository>();
             Empleados = new ObservableCollection<Empleado>();
             GuardarButtonCommand = new RelayCommand(GuardarEmpleado);
+            CancelarButtonCommand = new RelayCommand(CancelarEmpleado);
+            NuevoButtonCommand = new RelayCommand(NuevoEmpleado);
+            EliminarButtonCommand = new RelayCommand(EliminarEmpleado);
             LoadData();
         }
 
@@ -167,10 +174,57 @@ namespace NavegacionLateralWPF.ViewModels
 
         private void GuardarEmpleado(object? obj)
         {
-            Departamento? departamento = _departamentoRepository.ListarTodos().Find(o => o.Name == _empleadoDepartamento);
-            _empleadoRepository.Registrar(new Empleado(_empleadoDni, _empleadoNombre, _empleadoApellidos, _empleadoPuesto, _empleadoUrlImagen, departamento));
-            LoadData();
+            if (_empleadoDni != "" &&
+                _empleadoNombre != "" &&
+                _empleadoApellidos != "" &&
+                _empleadoPuesto != "" &&
+                _empleadoDepartamento != null)
+            {
+                Departamento? departamento = _departamentoRepository.ListarTodos().Find(o => o.Name == _empleadoDepartamento);
+                Empleado empleadoNuevo = new Empleado(_empleadoDni, _empleadoNombre, _empleadoApellidos, _empleadoPuesto, _empleadoUrlImagen, departamento);
+                _empleadoRepository.Registrar(empleadoNuevo);
+                EmpleadoSeleccionado = empleadoNuevo;
+                LoadData();
+            }
         }
 
+        private void CancelarEmpleado(object? obj)
+        {
+            if (_empleadoSeleccionado != null)
+            CambiarVariables(_empleadoSeleccionado);
+        }
+
+        private void NuevoEmpleado(object? obj)
+        {
+            VaciarCampos();
+        }
+
+        private void VaciarCampos()
+        {
+            EmpleadoDni = "";
+            EmpleadoNombre = "";
+            EmpleadoApellidos = "";
+            EmpleadoPuesto = "";
+            EmpleadoUrlImagen = "";
+            EmpleadoDepartamento = "";
+        }
+
+        private void EliminarEmpleado(object? obj)
+        {
+
+            if (_empleadoSeleccionado != null)
+            {
+                MessageBoxResult result = MessageBox.Show("¿Seguro que desea eliminar el empleado " + _empleadoNombre + " " + _empleadoApellidos + "?", "Eliminar", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    _empleadoRepository.Eliminar(_empleadoSeleccionado);
+                    _empleadoSeleccionado = null;
+                    LoadData();
+                    VaciarCampos();
+                }
+                
+            }
+        }
     }
 }

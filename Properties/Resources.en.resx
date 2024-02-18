@@ -129,11 +129,20 @@
   <data name="Añadir nuevo elemento" xml:space="preserve">
     <value>Add new element</value>
   </data>
+  <data name="CamposToast" xml:space="preserve">
+    <value>The fields ID, name, surnames, employment and department are mandatory</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="Correo" xml:space="preserve">
     <value>E-mail</value>
   </data>
   <data name="Departamento" xml:space="preserve">
     <value>Department</value>
+  </data>
+  <data name="Departamentos" xml:space="preserve">
+    <value>Departments</value>
   </data>
   <data name="Dirección" xml:space="preserve">
     <value>Address</value>
@@ -147,14 +156,23 @@
   <data name="Editar" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="Eliminar" xml:space="preserve">
+    <value>Remove</value>
+  </data>
   <data name="Empleados" xml:space="preserve">
     <value>Employees</value>
+  </data>
+  <data name="EmpleadosPorDepartamento" xml:space="preserve">
+    <value>Employees by department</value>
   </data>
   <data name="Español" xml:space="preserve">
     <value>Spanish</value>
   </data>
   <data name="Graficas" xml:space="preserve">
     <value>Graphics</value>
+  </data>
+  <data name="GuardadoToast" xml:space="preserve">
+    <value>Saved successfully</value>
   </data>
   <data name="Guardar" xml:space="preserve">
     <value>Save</value>
@@ -168,8 +186,14 @@
   <data name="Inicio" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="NEmpleados" xml:space="preserve">
+    <value>NUM Employees</value>
+  </data>
   <data name="Nombre" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="Nuevo" xml:space="preserve">
+    <value>New</value>
   </data>
   <data name="Otros elementos" xml:space="preserve">
     <value>Other items</value>

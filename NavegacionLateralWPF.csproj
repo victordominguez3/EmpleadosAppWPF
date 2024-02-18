@@ -9,15 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Images\add.png" />
+    <None Remove="Resources\Images\cancelar.png" />
     <None Remove="Resources\Images\down.png" />
     <None Remove="Resources\Images\edit.png" />
+    <None Remove="Resources\Images\eliminar.png" />
     <None Remove="Resources\Images\empleado.png" />
     <None Remove="Resources\Images\español.png" />
     <None Remove="Resources\Images\exit.png" />
     <None Remove="Resources\Images\grafica.png" />
     <None Remove="Resources\Images\home.png" />
     <None Remove="Resources\Images\ingles.png" />
+    <None Remove="Resources\Images\nuevo.png" />
     <None Remove="Resources\Images\save.png" />
     <None Remove="Resources\Images\settings.png" />
     <None Remove="Resources\Images\user.png" />
@@ -25,15 +27,22 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.23.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Images\cancelar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Images\down.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\eliminar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\empleado.png">
@@ -45,9 +54,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Images\add.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Resources\Images\exit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -58,6 +64,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\ingles.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\nuevo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\save.png">

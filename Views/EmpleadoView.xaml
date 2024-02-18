@@ -22,26 +22,68 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
         <TextBlock Text="{x:Static p:Resources.Empleados}"
                    FontSize="30"
                    FontWeight="Bold"
                    Foreground="#147657"
                    Margin="25, 10, 0, 0"
-                   Grid.Row="0"/>
-    
-        <Grid Grid.Row="1">
+                   Grid.Row="0" Grid.Column="0"/>
+
+        <Border x:Name="GuardadoToast" 
+                BorderBrush="#1DE08C" 
+                BorderThickness="2" 
+                CornerRadius="10" 
+                HorizontalAlignment="Center" 
+                Visibility="Collapsed" 
+                Margin="10, 10, 10, 0"
+                Grid.Row="0" Grid.Column="1">
+            
+            <TextBlock Text="{x:Static p:Resources.GuardadoToast}" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top" 
+                       FontSize="20" 
+                       FontWeight="Bold" 
+                       Foreground="#147657" 
+                       Margin="10, 5, 10, 0"/>
+        </Border>
+
+        <Border x:Name="CamposToast" 
+                BorderBrush="#1DE08C" 
+                BorderThickness="2" 
+                CornerRadius="10" 
+                HorizontalAlignment="Center" 
+                Visibility="Collapsed" 
+                Margin="10, 10, 10, 0"
+                Grid.Row="0" Grid.Column="1">
+            
+            <TextBlock Text="{x:Static p:Resources.CamposToast}" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Top" 
+                       FontSize="20" 
+                       FontWeight="Bold" 
+                       Foreground="#147657" 
+                       Margin="10, 5, 10, 0"/>
+        </Border>
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="6*"/>
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" CornerRadius="10" BorderBrush="#1DE08C" BorderThickness="2" Margin="30, 30, 5, 30">
-                <DataGrid ItemsSource="{Binding Empleados}" 
+                <DataGrid x:Name="Datagrid"
+                          ItemsSource="{Binding Empleados}" 
                           Style="{StaticResource DataGridStyle}" 
                           CellStyle="{StaticResource DataGridCellStyle}" 
                           RowStyle="{StaticResource DataGridRowStyle}" 
                           AutoGeneratingColumn="ExcluirColumnaImagen"
+                          SelectionChanged="SeleccionCambiada"
                           SelectedItem="{Binding EmpleadoSeleccionado}"
                           Margin="10"/>
             </Border>
@@ -50,116 +92,145 @@
 
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="10">
 
-                <StackPanel Orientation="Vertical">
-                    
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        
-                        <Border CornerRadius="7" Height="300" Width="300" Margin="0, 30, 0, 0" Background="#147657" Grid.Row="0"/>
-                        <Border CornerRadius="7" Height="300" Width="300" Margin="0, 30, 0, 0" Grid.Row="0">
-                            <Border.Background>
-                                <ImageBrush ImageSource="{Binding EmpleadoSeleccionado.UrlImagen}" Stretch="UniformToFill"/>
-                            </Border.Background>
-                        </Border>
-                            
-                    </Grid>
+                    <StackPanel Orientation="Vertical">
 
-                    <Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
+                            <Border CornerRadius="7" Height="300" Width="300" Margin="0, 30, 0, 0" Background="#147657" Grid.Row="0"/>
+                            <Border CornerRadius="7" Height="300" Width="300" Margin="0, 30, 0, 0" Grid.Row="0">
+                                <Border.Background>
+                                    <ImageBrush x:Name="ImagenBrush" ImageSource="{Binding EmpleadoSeleccionado.UrlImagen}" Stretch="UniformToFill"/>
+                                </Border.Background>
+                            </Border>
 
-                        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="10, 20, 5, 0">
+                        </Grid>
 
-                            <TextBlock Text="{x:Static p:Resources.DniForm}"
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="10, 20, 5, 0">
+
+                                <TextBlock Text="{x:Static p:Resources.DniForm}"
                                        FontSize="15"
                                        Foreground="#147657"
                                        Margin="10, 0, 0, 5"/>
 
 
-                            <TextBox Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoDni, Mode=TwoWay}"/>
+                                <TextBox x:Name="DniTextBox" Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoDni, Mode=TwoWay}"/>
 
 
-                            <TextBlock Text="{x:Static p:Resources.Nombre}"
+                                <TextBlock Text="{x:Static p:Resources.Nombre}"
                                        FontSize="15"
                                        Foreground="#147657"
                                        Margin="10, 20, 0, 5"/>
 
-                            <TextBox Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoNombre, Mode=TwoWay}"/>
+                                <TextBox x:Name="NombreTextBox" Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoNombre, Mode=TwoWay}"/>
 
-                            <TextBlock Text="{x:Static p:Resources.Puesto}"
+                                <TextBlock Text="{x:Static p:Resources.Puesto}"
                                        FontSize="15"
                                        Foreground="#147657"
                                        Margin="10, 20, 0, 5"/>
 
-                            <TextBox Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoPuesto, Mode=TwoWay}"/>
+                                <TextBox x:Name="PuestoTextBox" Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoPuesto, Mode=TwoWay}"/>
 
-                        </StackPanel>
+                            </StackPanel>
 
-                        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0" Margin="5, 20, 10, 0">
+                            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0" Margin="5, 20, 10, 0">
 
-                            <TextBlock Text="{x:Static p:Resources.UrlImagen}"
+                                <TextBlock Text="{x:Static p:Resources.UrlImagen}"
                                        FontSize="15"
                                        Foreground="#147657"
                                        Margin="10, 0, 0, 5"/>
 
-                            <TextBox Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoUrlImagen, Mode=TwoWay}"/>
+                                <TextBox x:Name="ImagenTextBox" Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoUrlImagen, Mode=TwoWay}"/>
 
-                            <TextBlock Text="{x:Static p:Resources.Apellidos}"
+                                <TextBlock Text="{x:Static p:Resources.Apellidos}"
                                        FontSize="15"
                                        Foreground="#147657"
                                        Margin="10, 20, 0, 5"/>
 
-                            <TextBox Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoApellidos, Mode=TwoWay}"/>
+                                <TextBox x:Name="ApellidosTextBox" Template="{StaticResource TextBoxTemplate}" Text="{Binding EmpleadoApellidos, Mode=TwoWay}"/>
 
-                            <TextBlock Text="{x:Static p:Resources.Departamento}"
+                                <TextBlock Text="{x:Static p:Resources.Departamento}"
                                        FontSize="15"
                                        Foreground="#147657"
                                        Margin="10, 20, 0, 5"/>
 
-                            <ComboBox SelectedItem="{Binding EmpleadoDepartamento, Mode=TwoWay}" ItemsSource="{Binding Departamentos}" Template="{StaticResource ComboBoxTemplate}" x:Name="DepartamentoComboBox"/>
+                                <ComboBox x:Name="DepartamentoComboBox" SelectedItem="{Binding EmpleadoDepartamento, Mode=TwoWay}" ItemsSource="{Binding Departamentos}" Template="{StaticResource ComboBoxTemplate}"/>
 
-                        </StackPanel>
+                            </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0, 30, 20, 0">
+                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0, 30, 20, 0">
 
-                            <Button x:Name="EditarButton"
-                                    Template="{StaticResource MyButton}"
-                                    Content="{x:Static p:Resources.Editar}"
-                                    Tag="/Resources/Images/edit.png"
-                                    Click="OnEditarButtonClick"
-                                    Command="{Binding EditarButtonCommand}">
-                            </Button>
+                                <Button x:Name="NuevoButton"
+                                        Template="{StaticResource MyButton}"
+                                        Content="{x:Static p:Resources.Nuevo}"
+                                        Tag="/Resources/Images/nuevo.png"
+                                        Click="OnNuevoButtonClick"
+                                        Command="{Binding NuevoButtonCommand}">
+                                </Button>
 
-                            <Button x:Name="GuardarButton"
-                                    Template="{StaticResource MyButton}"
-                                    Content="{x:Static p:Resources.Guardar}"
-                                    Tag="/Resources/Images/save.png"
-                                    Margin="20, 0, 0, 0"
-                                    Visibility="Collapsed"
-                                    Click="OnGuardarButtonClick"
-                                    Command="{Binding GuardarButtonCommand}">
-                            </Button>
-                        
-                        </StackPanel>
+                                <Button x:Name="EditarButton"
+                                        Template="{StaticResource MyButton}"
+                                        Content="{x:Static p:Resources.Editar}"
+                                        Tag="/Resources/Images/edit.png"
+                                        Click="OnEditarButtonClick"
+                                        Visibility="Collapsed"
+                                        Margin="20, 0, 0, 0"
+                                        Command="{Binding EditarButtonCommand}">
+                                </Button>
 
-                    </Grid>
+                                <Button x:Name="CancelarButton"
+                                        Template="{StaticResource MyButton}"
+                                        Content="{x:Static p:Resources.Cancelar}"
+                                        Tag="/Resources/Images/cancelar.png"
+                                        Click="OnCancelarButtonClick"
+                                        Visibility="Collapsed"
+                                        Command="{Binding CancelarButtonCommand}">
+                                </Button>
 
-                </StackPanel>
+                                <Button x:Name="GuardarButton"
+                                        Template="{StaticResource MyButton}"
+                                        Content="{x:Static p:Resources.Guardar}"
+                                        Tag="/Resources/Images/save.png"
+                                        Margin="20, 0, 0, 0"
+                                        Visibility="Collapsed"
+                                        Click="OnGuardarButtonClick"
+                                        Command="{Binding GuardarButtonCommand}">
+                                </Button>
+
+                                <Button x:Name="EliminarButton"
+                                        Template="{StaticResource MyButton}"
+                                        Content="{x:Static p:Resources.Eliminar}"
+                                        Tag="/Resources/Images/eliminar.png"
+                                        Margin="20, 0, 0, 0"
+                                        Visibility="Collapsed"
+                                        Click="OnEliminarButtonClick"
+                                        Command="{Binding EliminarButtonCommand}">
+                                </Button>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </StackPanel>
 
                 </ScrollViewer>
 
             </Border>
-    
+
         </Grid>
-        
+
     </Grid>
 </UserControl>

@@ -56,3 +56,6 @@ C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\EmpleadoView.baml
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\GraficaView.g.cs
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\GraficaView.baml
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\LiveCharts.dll
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\NavegacionLateralWPF.sourcelink.json

@@ -97,6 +97,24 @@ namespace NavegacionLateralWPF.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Los campos DNI, nombre, apellidos, puesto y departamento son obligatorios.
+        /// </summary>
+        public static string CamposToast {
+            get {
+                return ResourceManager.GetString("CamposToast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        public static string Cancelar {
+            get {
+                return ResourceManager.GetString("Cancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Correo electrónico.
         /// </summary>
         public static string Correo {
@@ -111,6 +129,15 @@ namespace NavegacionLateralWPF.Properties {
         public static string Departamento {
             get {
                 return ResourceManager.GetString("Departamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Departamentos.
+        /// </summary>
+        public static string Departamentos {
+            get {
+                return ResourceManager.GetString("Departamentos", resourceCulture);
             }
         }
         
@@ -151,11 +178,29 @@ namespace NavegacionLateralWPF.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Eliminar.
+        /// </summary>
+        public static string Eliminar {
+            get {
+                return ResourceManager.GetString("Eliminar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Empleados.
         /// </summary>
         public static string Empleados {
             get {
                 return ResourceManager.GetString("Empleados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Empleados por departamento.
+        /// </summary>
+        public static string EmpleadosPorDepartamento {
+            get {
+                return ResourceManager.GetString("EmpleadosPorDepartamento", resourceCulture);
             }
         }
         
@@ -174,6 +219,15 @@ namespace NavegacionLateralWPF.Properties {
         public static string Graficas {
             get {
                 return ResourceManager.GetString("Graficas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Guardado con éxito.
+        /// </summary>
+        public static string GuardadoToast {
+            get {
+                return ResourceManager.GetString("GuardadoToast", resourceCulture);
             }
         }
         
@@ -214,11 +268,29 @@ namespace NavegacionLateralWPF.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Nº Empleados.
+        /// </summary>
+        public static string NEmpleados {
+            get {
+                return ResourceManager.GetString("NEmpleados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombre.
         /// </summary>
         public static string Nombre {
             get {
                 return ResourceManager.GetString("Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nuevo.
+        /// </summary>
+        public static string Nuevo {
+            get {
+                return ResourceManager.GetString("Nuevo", resourceCulture);
             }
         }
         
