@@ -34,6 +34,7 @@ namespace NavegacionLateralWPF
             // ViewModels
             services.AddTransient<HomeViewModel>();
             services.AddTransient<EmpleadoViewModel>();
+            services.AddTransient<DepartamentoViewModel>();
             services.AddTransient<GraficaViewModel>();
             services.AddTransient<MainViewModel>();
             services.AddTransient<SettingsViewModel>();

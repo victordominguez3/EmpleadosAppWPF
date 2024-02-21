@@ -7,7 +7,7 @@
         xmlns:p="clr-namespace:NavegacionLateralWPF.Properties"
         xmlns:vm="clr-namespace:NavegacionLateralWPF.ViewModels"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.Título}" Height="450" Width="800">
+        Title="{x:Static p:Resources.Título}" Height="450" Width="800" WindowStyle="None">
         <Window.DataContext>
             <vm:MainViewModel/>
         </Window.DataContext>
@@ -19,7 +19,7 @@
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="190"/>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -51,6 +51,14 @@
                 </RadioButton>
 
                 <RadioButton Template="{StaticResource MenuButton}"
+                             Command="{Binding ActivateDepartamentoViewCommand}" GroupName="SideMenu"
+                             Margin="10, 10, 10, 0"
+                             DockPanel.Dock="Top"
+                             Content="{x:Static p:Resources.Departamentos}"
+                             Tag="/Resources/Images/departamento.png">
+                </RadioButton>
+
+                <RadioButton Template="{StaticResource MenuButton}"
                              Command="{Binding ActivateGraficaViewCommand}" GroupName="SideMenu"
                              Margin="10, 10, 10, 0"
                              DockPanel.Dock="Top"
@@ -69,7 +77,7 @@
                 <Button Template="{StaticResource MyButton}"
                         Margin="15, 0, 15, 30"
                         VerticalAlignment="Bottom"
-                        Click="OnExitButtonClick"
+                        Command="{Binding SalirButtonCommand}"
                         Content="{x:Static p:Resources.Salir}"
                         Tag="/Resources/Images/exit.png">
                 </Button>

@@ -129,11 +129,20 @@
   <data name="Añadir nuevo elemento" xml:space="preserve">
     <value>Add new element</value>
   </data>
+  <data name="CamposDepartamentoToast" xml:space="preserve">
+    <value>The fields ID and name are mandatory</value>
+  </data>
+  <data name="CamposEditarDepartamentoToast" xml:space="preserve">
+    <value>The field name is mandatory</value>
+  </data>
   <data name="CamposToast" xml:space="preserve">
     <value>The fields ID, name, surnames, employment and department are mandatory</value>
   </data>
   <data name="Cancelar" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="Confirmar" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="Correo" xml:space="preserve">
     <value>E-mail</value>
@@ -179,6 +188,9 @@
   </data>
   <data name="Idioma" xml:space="preserve">
     <value>Language</value>
+  </data>
+  <data name="IdToast" xml:space="preserve">
+    <value>Id already exists</value>
   </data>
   <data name="Inglés" xml:space="preserve">
     <value>English</value>

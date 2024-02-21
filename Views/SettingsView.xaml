@@ -19,7 +19,7 @@
     <StackPanel x:Name="mainPanel" Orientation="Vertical" Loaded="HomeView_Loaded">
 
         <TextBlock Text="{x:Static p:Resources.Ajustes}"
-                   FontSize="20"
+                   FontSize="30"
                    FontWeight="Bold"
                    Foreground="#147657"
                    Margin="20, 10, 0, 0"/>

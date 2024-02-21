@@ -18,19 +18,25 @@ namespace NavegacionLateralWPF.ViewModels
     internal partial class HomeViewModel: ObservableObject
     {
         private readonly EmpleadoRepository _empleadoRepository;
+        private readonly DepartamentoRepository _departamentoRepository;
 
         [ObservableProperty]
         private ObservableCollection<Empleado> empleados;
 
+        [ObservableProperty]
+        private ObservableCollection<Departamento> departamentos;
+
         public HomeViewModel()
         {
             _empleadoRepository = App.Current.Services.GetService<EmpleadoRepository>();
-            LoadEmpleados();
+            _departamentoRepository = App.Current.Services.GetService<DepartamentoRepository>();
+            LoadData();
         }
 
-        private void LoadEmpleados()
+        private void LoadData()
         {
             empleados = new ObservableCollection<Empleado>(_empleadoRepository.ListarTodos());
+            departamentos = new ObservableCollection<Departamento>(_departamentoRepository.ListarTodos());
         }
     }
 }

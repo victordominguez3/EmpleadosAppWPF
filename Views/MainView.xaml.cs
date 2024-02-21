@@ -1,5 +1,10 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using NavegacionLateralWPF.Models;
+using NavegacionLateralWPF.Repositories;
+using SharpCompress.Common;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,16 +24,13 @@ namespace NavegacionLateralWPF.Views
     /// </summary>
     public partial class MainView : Window
     {
+
         public MainView()
         {
             LanguageManager.ChangeLanguage(Properties.Settings.Default.Idioma);
             InitializeComponent();
             this.WindowState = WindowState.Maximized;
-        }
 
-        private void OnExitButtonClick(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
         }
 
     }

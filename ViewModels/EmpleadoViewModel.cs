@@ -137,7 +137,7 @@ namespace NavegacionLateralWPF.ViewModels
         {
             _empleadoRepository = App.Current.Services.GetService<EmpleadoRepository>();
             _departamentoRepository = App.Current.Services.GetService<DepartamentoRepository>();
-            Empleados = new ObservableCollection<Empleado>();
+            _empleados = new ObservableCollection<Empleado>(_empleadoRepository.ListarTodos());
             GuardarButtonCommand = new RelayCommand(GuardarEmpleado);
             CancelarButtonCommand = new RelayCommand(CancelarEmpleado);
             NuevoButtonCommand = new RelayCommand(NuevoEmpleado);
@@ -147,12 +147,7 @@ namespace NavegacionLateralWPF.ViewModels
 
         private void LoadData()
         {
-            var newEmpleados = _empleadoRepository.ListarTodos();
-            Empleados.Clear();
-            foreach (var empleado in newEmpleados)
-            {
-                Empleados.Add(empleado);
-            }
+            Empleados = new ObservableCollection<Empleado>(_empleadoRepository.ListarTodos());
 
             Departamentos = new ObservableCollection<string>(_departamentoRepository.ListarTodos().Select(o => o.Name));
         }
@@ -178,7 +173,7 @@ namespace NavegacionLateralWPF.ViewModels
                 _empleadoNombre != "" &&
                 _empleadoApellidos != "" &&
                 _empleadoPuesto != "" &&
-                _empleadoDepartamento != null)
+                _empleadoDepartamento != "")
             {
                 Departamento? departamento = _departamentoRepository.ListarTodos().Find(o => o.Name == _empleadoDepartamento);
                 Empleado empleadoNuevo = new Empleado(_empleadoDni, _empleadoNombre, _empleadoApellidos, _empleadoPuesto, _empleadoUrlImagen, departamento);
@@ -191,7 +186,10 @@ namespace NavegacionLateralWPF.ViewModels
         private void CancelarEmpleado(object? obj)
         {
             if (_empleadoSeleccionado != null)
-            CambiarVariables(_empleadoSeleccionado);
+            {
+                CambiarVariables(_empleadoSeleccionado);
+            }
+            VaciarCampos();
         }
 
         private void NuevoEmpleado(object? obj)

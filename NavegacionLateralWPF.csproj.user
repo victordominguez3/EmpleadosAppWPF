@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\AddView.xaml.cs">
+    <Compile Update="Views\DepartamentoView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\EmpleadoView.xaml.cs">
@@ -25,12 +25,18 @@
     <Compile Update="Views\SettingsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WindowDialogs\DepartamentoDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowDialogs\EditarDepartamentoDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Resources\Resources.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AddView.xaml">
+    <Page Update="Views\DepartamentoView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EmpleadoView.xaml">
@@ -46,6 +52,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowDialogs\DepartamentoDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowDialogs\EditarDepartamentoDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

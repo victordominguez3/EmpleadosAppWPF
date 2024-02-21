@@ -16,6 +16,9 @@
             <DataTemplate DataType="{x:Type vm:EmpleadoViewModel}">
                 <v:EmpleadoView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:DepartamentoViewModel}">
+                <v:DepartamentoView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:GraficaViewModel}">
                 <v:GraficaView/>
             </DataTemplate>

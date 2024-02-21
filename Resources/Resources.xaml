@@ -188,6 +188,92 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="MyButtonBlack" TargetType="Button">
+
+        <Grid>
+
+            <Border x:Name="border_MenuButton"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="10"
+            RenderTransformOrigin="0.5, 0.5"
+            Background="Transparent">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+
+                    <Image Source="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}}"
+                       Width="20" Height="20" VerticalAlignment="Center"
+                       Margin="5, 3, 10, 3">
+
+                        <Image.RenderTransformOrigin>
+                            <Point X="0.5" Y="0.5"/>
+                        </Image.RenderTransformOrigin>
+                        <Image.RenderTransform>
+                            <RotateTransform x:Name="ImageRotation"/>
+                        </Image.RenderTransform>
+
+                    </Image>
+
+                    <TextBlock Text="{TemplateBinding Content}"
+                           FontSize="15"
+                           FontWeight="DemiBold"
+                           Foreground="Black"
+                           VerticalAlignment="Center"
+                           Margin="0, 0, 5, 0"/>
+
+                </StackPanel>
+
+                <Border.RenderTransform>
+                    <ScaleTransform x:Name="MenuButtonTransform"/>
+                </Border.RenderTransform>
+            </Border>
+
+        </Grid>
+
+        <ControlTemplate.Triggers>
+
+            <EventTrigger RoutedEvent="Border.MouseEnter"
+                  SourceName="border_MenuButton">
+
+                <BeginStoryboard>
+                    <Storyboard>
+
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                     Storyboard.TargetProperty="ScaleX"
+                                     From="1" To="1.1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                     Storyboard.TargetProperty="ScaleY"
+                                     From="1" To="1.1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetName="ImageRotation"
+                                     Storyboard.TargetProperty="Angle"
+                                     From="0" To="360" Duration="0:0:0.5"/>
+
+                    </Storyboard>
+                </BeginStoryboard>
+
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Border.MouseLeave"
+                  SourceName="border_MenuButton">
+
+                <BeginStoryboard>
+                    <Storyboard>
+
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                     Storyboard.TargetProperty="ScaleX"
+                                     From="1.1" To="1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetName="MenuButtonTransform"
+                                     Storyboard.TargetProperty="ScaleY"
+                                     From="1.1" To="1" Duration="0:0:0.1"/>
+
+                    </Storyboard>
+                </BeginStoryboard>
+
+            </EventTrigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
     <Storyboard x:Key="FloatInAnimation">
         <DoubleAnimation Storyboard.TargetName="mainPanel" 
                          Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"

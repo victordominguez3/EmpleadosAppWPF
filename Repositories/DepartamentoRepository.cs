@@ -12,10 +12,7 @@ namespace NavegacionLateralWPF.Repositories
 
         private List<Departamento> departamentos = new List<Departamento>
         {
-            new Departamento("0", "Desarrollo"),
-            new Departamento("1", "Marketing"),
-            new Departamento("2", "Recursos humanos"),
-            new Departamento("3", "Diseño")
+            
         };
 
         public DepartamentoRepository() { }

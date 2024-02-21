@@ -1,0 +1,65 @@
+﻿<Window x:Class="NavegacionLateralWPF.WindowDialogs.EditarDepartamentoDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NavegacionLateralWPF.WindowDialogs"
+        xmlns:p="clr-namespace:NavegacionLateralWPF.Properties"
+        mc:Ignorable="d"
+        Title="Editar departamento" Height="300" Width="500">
+
+    <Window.Resources>
+        <ResourceDictionary Source="/Resources/Resources.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+
+        <StackPanel Orientation="Vertical" Margin="10">
+
+            <TextBlock Text="{x:Static p:Resources.Nombre}"
+                       FontSize="15"
+                       Foreground="#147657"
+                       Margin="10, 20, 0, 5"/>
+
+            <TextBox x:Name="NombreTextBox" Template="{StaticResource TextBoxTemplate}"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 30, 20, 0">
+
+                <Button x:Name="CancelarButton"
+                        Template="{StaticResource MyButton}"
+                        Content="{x:Static p:Resources.Cancelar}"
+                        Tag="/Resources/Images/cancelar.png"
+                        Click="OnCancelarButtonClick">
+                </Button>
+
+                <Button x:Name="ConfirmarButton"
+                        Template="{StaticResource MyButton}"
+                        Content="{x:Static p:Resources.Confirmar}"
+                        Tag="/Resources/Images/confirmar.png"
+                        Click="OnConfirmarButtonClick"
+                        Margin="20, 0, 0, 0">
+                </Button>
+
+            </StackPanel>
+
+            <Border x:Name="CamposToast" 
+                    BorderBrush="#E03A1D" 
+                    BorderThickness="2" 
+                    CornerRadius="10" 
+                    HorizontalAlignment="Center" 
+                    Visibility="Collapsed" 
+                    Margin="10, 20, 10, 0">
+
+                <TextBlock Text="{x:Static p:Resources.CamposEditarDepartamentoToast}" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Top" 
+                           FontSize="15" 
+                           FontWeight="Bold" 
+                           Foreground="#147657" 
+                           Margin="10, 0, 10, 0"/>
+            </Border>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

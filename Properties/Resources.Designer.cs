@@ -97,6 +97,24 @@ namespace NavegacionLateralWPF.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Los campos ID y nombre son obligatorios.
+        /// </summary>
+        public static string CamposDepartamentoToast {
+            get {
+                return ResourceManager.GetString("CamposDepartamentoToast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El campo nombre es obligatorio.
+        /// </summary>
+        public static string CamposEditarDepartamentoToast {
+            get {
+                return ResourceManager.GetString("CamposEditarDepartamentoToast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Los campos DNI, nombre, apellidos, puesto y departamento son obligatorios.
         /// </summary>
         public static string CamposToast {
@@ -111,6 +129,15 @@ namespace NavegacionLateralWPF.Properties {
         public static string Cancelar {
             get {
                 return ResourceManager.GetString("Cancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmar.
+        /// </summary>
+        public static string Confirmar {
+            get {
+                return ResourceManager.GetString("Confirmar", resourceCulture);
             }
         }
         
@@ -246,6 +273,15 @@ namespace NavegacionLateralWPF.Properties {
         public static string Idioma {
             get {
                 return ResourceManager.GetString("Idioma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El ID ya existe.
+        /// </summary>
+        public static string IdToast {
+            get {
+                return ResourceManager.GetString("IdToast", resourceCulture);
             }
         }
         

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\App.xaml
-7-501890411
+9-1687977080
 
-25-963344389
+27-1237189539
 214-1082543847
-Resources\Resources.xaml;Views\AddView.xaml;Views\EmpleadoView.xaml;Views\GraficaView.xaml;Views\HomeView.xaml;Views\MainView.xaml;Views\SettingsView.xaml;
+Resources\Resources.xaml;Views\DepartamentoView.xaml;Views\EmpleadoView.xaml;Views\GraficaView.xaml;Views\HomeView.xaml;Views\MainView.xaml;Views\SettingsView.xaml;WindowDialogs\DepartamentoDialog.xaml;WindowDialogs\EditarDepartamentoDialog.xaml;
 
 False
 

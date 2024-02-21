@@ -3,7 +3,6 @@ C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\Navega
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\NavegacionLateralWPF.runtimeconfig.json
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\NavegacionLateralWPF.dll
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\NavegacionLateralWPF.pdb
-C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\AddView.g.cs
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\HomeView.g.cs
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\MainView.g.cs
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\SettingsView.g.cs
@@ -12,7 +11,6 @@ C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Genera
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\NavegacionLateralWPF_MarkupCompile.cache
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\NavegacionLateralWPF_MarkupCompile.lref
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\App.baml
-C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\AddView.baml
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\HomeView.baml
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\MainView.baml
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\SettingsView.baml
@@ -59,3 +57,11 @@ C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\LiveCharts.dll
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
 C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\NavegacionLateralWPF.sourcelink.json
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\DepartamentoView.g.cs
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\Views\DepartamentoView.baml
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\WindowDialogs\DepartamentoDialog.g.cs
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\WindowDialogs\DepartamentoDialog.baml
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\WindowDialogs\EditarDepartamentoDialog.g.cs
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\obj\Debug\net8.0-windows\WindowDialogs\EditarDepartamentoDialog.baml
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\Datos\empleados.txt
+C:\Users\vdgl1\source\repos\NavegacionLateralWPF\bin\Debug\net8.0-windows\Datos\departamentos.txt

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NavegacionLateralWPF.Views"
              xmlns:p="clr-namespace:NavegacionLateralWPF.Properties"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:vm="clr-namespace:NavegacionLateralWPF.ViewModels">
                 <UserControl.DataContext>
@@ -53,7 +53,7 @@
         </Border>
 
         <Border x:Name="CamposToast" 
-                BorderBrush="#1DE08C" 
+                BorderBrush="#E03A1D" 
                 BorderThickness="2" 
                 CornerRadius="10" 
                 HorizontalAlignment="Center" 

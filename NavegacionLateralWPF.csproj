@@ -10,9 +10,13 @@
 
   <ItemGroup>
     <None Remove="Resources\Images\cancelar.png" />
+    <None Remove="Resources\Images\confirmar.png" />
+    <None Remove="Resources\Images\departamento.png" />
     <None Remove="Resources\Images\down.png" />
     <None Remove="Resources\Images\edit.png" />
+    <None Remove="Resources\Images\edit_black.png" />
     <None Remove="Resources\Images\eliminar.png" />
+    <None Remove="Resources\Images\eliminar_black.png" />
     <None Remove="Resources\Images\empleado.png" />
     <None Remove="Resources\Images\español.png" />
     <None Remove="Resources\Images\exit.png" />
@@ -36,13 +40,25 @@
     <Resource Include="Resources\Images\cancelar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Images\confirmar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\departamento.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Images\down.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\edit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Images\edit_black.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Images\eliminar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\eliminar_black.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\empleado.png">
@@ -101,6 +117,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Datos\departamentos.txt">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Datos\empleados.txt">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

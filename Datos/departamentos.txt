@@ -1,0 +1,5 @@
+﻿1;Desarrollo
+2;Diseño
+3;Marketing
+4;Recursos humanos
+5;Ventas

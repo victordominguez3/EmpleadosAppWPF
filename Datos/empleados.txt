@@ -1,0 +1,14 @@
+﻿51847587Y;Victor;Dominguez Gomez;Diseñador de Experiencia de Usuario;https://www.nationalgeographic.com.es/medio/2022/12/12/ardilla-2_d0a43045_221212154055_310x310.jpg;2
+15784598P;María;Fernández García;Ejecutivo de Ventas;https://www.fundacionaquae.org/wp-content/uploads/2018/10/proteger-a-los-animales-1024x654.jpg;5
+51263947U;Juan;Martínez López;Ingeniero de Software;https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2023/09/28/16959013724520.jpg;1
+48596742R;Ana;Rodríguez Pérez;Diseñador de Interfaz de Usuario;https://www.telemundo.com/sites/nbcutelemundo/files/styles/fit-760w/public/images/article/cover/2018/04/19/tigre-caminando.jpg?ramen_itok=iqwQftIcTf;2
+59684751F;Luis;Gómez Martínez;Gerente de Recursos Humanos;https://hospitalveterinariodonostia.com/wp-content/uploads/2018/12/6-lugares-donde-puedes-ver-animales-exoticos-6.jpg;4
+12574896L;Carmen;Sánchez Ruiz;Desarrollador Full Stack;https://www.nationalgeographic.com.es/medio/2022/12/12/aguila-2_d7d2206b_221212153725_310x310.jpg;1
+57485124H;Pablo;Pérez Rodríguez;Arquitecto de Software;https://www.tiendanimal.es/articulos/wp-content/uploads/2023/05/coyote.jpg;2
+14784526J;Marta;López Fernández;Analista de Datos de Marketing;https://okdiario.com/img/2021/10/04/las-mejores-frases-para-celebrar-el-dia-de-los-animales.jpg;3
+84752695M;Javier;González Sánchez;Ingeniero de Datos;https://t1.ea.ltmcdn.com/es/posts/5/3/3/los_animales_piensan_24335_600_square.jpg;1
+10254187G;Andrea;Díaz Martínez;Analista de QA;https://imagenes.20minutos.es/files/image_640_360/files/fp/uploads/imagenes/2022/07/21/conejos-enanos.r_d.960-642.jpeg;1
+48963256Y;Carlos;Ruiz García;Gerente de Diseño de Producto;https://images.ecestaticos.com/X5wKlEz5LUAwspNqFb6Piztrr6k=/0x0:2121x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F0d3%2F2c0%2F341%2F0d32c03419b822b1bb285789832ae9cb.jpg;2
+12489687R;Sofía;Hernández López;Especialista en Marketing Digital;https://www.hogarmania.com/archivos/202109/animales-felices-portada-1280x720x80xX.jpg;3
+15478458D;Alejandro;Pérez Martínez;Arquitecto de Software;https://s1.eestatic.com/2021/08/05/curiosidades/naturaleza-planeta-tierra/601957550_199460114_1706x960.jpg;1
+47851452N;Laura;López Rodríguez;Gerente de Marketing de Contenidos;https://certifiedhumanelatino.org/wp-content/uploads/2017/11/CERTIFIED-HUMANE_Post-blog.png;3
